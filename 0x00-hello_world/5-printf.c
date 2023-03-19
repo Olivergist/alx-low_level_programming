@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *Description: Main - Print with Printf.
+ *Description: main - Print with Printf.
  *Return: 0 if successful.
  */
 int main(void)
