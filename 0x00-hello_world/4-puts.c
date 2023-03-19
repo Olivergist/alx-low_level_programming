@@ -1,9 +1,10 @@
 #include <stdio.h>
 /**
- *We are writting a script that print out without using prinntf
+ * Description: main -prints out.
+ * Return: 0 if sucessfull.
  */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
-return(0);
+return (0);
 }
