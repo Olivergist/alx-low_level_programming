@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if the C file name is provided
+if [ -z "$CFILE" ]; then
+  echo "Error: C file name not provided. Usage: CFILE=<file>.c preprocess_c_file.sh"
+    exit 1
+    fi
+
+# Run the preprocessor and save the output into the specified file
+cpp -P $CFILE -o c
