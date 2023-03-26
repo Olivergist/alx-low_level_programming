@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * mian - Entry Point
+ * main - Entry Point
  * Description: 'print number of base 10'
  * Return: AAlways 0
  */
