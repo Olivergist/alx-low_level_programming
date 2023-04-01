@@ -12,8 +12,8 @@ int main(void)
 	while (vic >= 'a')
 	{
 		putchar(vic);
-		putchar('\n');
 		vic--;
 	}
+	putchar('\n');
 	return (0);
 }
