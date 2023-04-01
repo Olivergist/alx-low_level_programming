@@ -8,17 +8,13 @@
 
 int main(void)
 {
-	for (int i = 0; i <= 15; i++)
-	{
-		if (i < 10)
+	char *hex_digits = "0123456789abcdef";
+	char *p = hex_digits;
 
-		{
-			putchar(i + '0');
-		}
-		else
-		{
-			putchar(i - 10 + 'a');
-		}
+	while (*p)
+	{
+		putchar(*p);
+		p++;
 	}
 	putchar('\n');
 	return (0);
