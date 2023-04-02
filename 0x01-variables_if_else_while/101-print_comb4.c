@@ -6,8 +6,6 @@
  * Return: Always 0
  */
 
-#include <stdio.h>
-
 int main(void)
 {
 	int i = 0, j = 1, k = 2;
@@ -26,9 +24,11 @@ int main(void)
 				k = j + 1;
 			}
 		}
-		putchar((i < 7 || j < 8 || k < 9) ? ',' : '\n');
-		putchar((i < 7 || j < 8 || k < 9) ? ' ' : '\0');
+		if (i < 7 || j < 8 || k < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	return (0);
 }
-
