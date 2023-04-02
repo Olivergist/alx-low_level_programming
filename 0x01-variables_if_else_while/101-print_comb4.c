@@ -6,28 +6,29 @@
  * Return: Always 0
  */
 
+#include <stdio.h>
+
 int main(void)
 {
 	int i = 0, j = 1, k = 2;
 
-	while (i < 9)
-
+	while (i <= 7)
 	{
 		putchar(i + '0');
 		putchar(j + '0');
 		putchar(k + '0');
-		if (i != 8 || j != 9 || k != 10)
+		if (++k > 9)
 		{
-			putchar(',');
-			putchar(' ');
+			k = ++j + 1;
+			if (k > 9)
+			{
+				j = ++i + 1;
+				k = j + 1;
+			}
 		}
-		j++;
-		if (j > 9)
-		{
-			i++;
-			j = i + 1;
-		}
+		putchar((i < 7 || j < 8 || k < 9) ? ',' : '\n');
+		putchar((i < 7 || j < 8 || k < 9) ? ' ' : '\0');
 	}
-	putchar('\n');
 	return (0);
 }
+
