@@ -2,12 +2,11 @@
 
 /**
  * print_chessboard - Print chessboard
- * @a: First Occurrance
- * Return: return
+ * @a: print
+ * Return: void
  */
 
 void print_chessboard(char (*a)[8])
-
 {
 	int i, j;
 
@@ -16,7 +15,6 @@ void print_chessboard(char (*a)[8])
 		for (j = 0; j < 8; j++)
 		{
 			putchar(a[i][j]);
-			putchar(' ');
 		}
 		putchar('\n');
 	}
