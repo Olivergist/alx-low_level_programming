@@ -10,14 +10,14 @@
  */
 int is_palindrome(char *s)
 {
-	int len = strlen(s);
+	int r = strlen(s);
 
-	if (len < 2)
+	if (r < 2)
 		return (1);
 
-	if (s[0] != s[len - 1])
+	if (s[0] != s[r - 1])
 		return (0);
 
-	s[len - 1] = '\0';
+	s[r - 1] = '\0';
 	return (is_palindrome(s + 1));
 }
