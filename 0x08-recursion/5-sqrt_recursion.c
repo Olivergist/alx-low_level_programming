@@ -15,12 +15,13 @@ int _sqrt_recursion(int n)
 	else if (n == 0)
 		return (0);
 	{
-		int i = 1; i
+		int i = 1;
 
 		while (i * i < n)
 			i++;
 		if (i * i == n)
 			return (i);
+		else
 			return (-1);
 	}
 }
