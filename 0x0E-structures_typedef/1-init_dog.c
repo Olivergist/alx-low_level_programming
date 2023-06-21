@@ -11,9 +11,9 @@
  * Description: This function takes a pointer to a struct dog variable
  * and initializes its name, age, and owner with the provided values.
  */
-void init_dog(struct dog *d, char *name, float age, char *owner) 
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if(d==NULL)
+	if (d == NULL)
 		d = malloc(sizeof(struct dog));
 	d->name = name;
 	d->age = age;
