@@ -4,7 +4,7 @@
 /**
  * main - Entry point of the program
  * @argc: The number of arguments supplied to the program
- * @argv: array of arguments
+ * @argv: An aray of pointers to the arguments.
  *
  * Return: Always 0 (Success)
  */
@@ -36,5 +36,8 @@ int main(int argc, char *argv[])
 			printf("%02hhx\n", arr[i]);
 			break;
 		}
+		printf("%02hhx ", arr[i]);
 	}
+	return (0);
 }
+
