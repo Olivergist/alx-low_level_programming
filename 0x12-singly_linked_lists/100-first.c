@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-void before_main(void) __attribute__((constructor));
+void first(void) __attribute__((constructor));
 
 /**
- * before_main - Before the main print a sentence
+ * first - Before the main print a sentence
  *
  */
 
-void before_main(void)
+void first(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
-	printf("i bore my house upon my back!\n");
+	printf("I bore my house upon my back!\n");
 }
