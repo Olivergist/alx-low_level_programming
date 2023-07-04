@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -13,7 +12,9 @@ int main(void)
 
 	printf("%u, %u", fib1, fib2);
 
-	for (int i = 3; i <= 98; i++)
+	int i;
+
+	for (i = 3; i <= 98; i++)
 	{
 		unsigned int fib = fib1 + fib2;
 
