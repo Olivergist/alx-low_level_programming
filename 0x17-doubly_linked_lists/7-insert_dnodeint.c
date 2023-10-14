@@ -2,59 +2,66 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - Inserts a new node 
- * at a given position.
- * @h: A double pointer to the head of the 
- * dlistint_t list.
- * @idx: The index at which the new node 
- * should be added.
+ * create_new_node - Creates a new dlistint_t node with a given value.
  * @n: The value to be stored in the new node.
- * Return: The address of the new node, 
- * or NULL if it failed.
+ * @prev: The previous node in the list.
+ * @next: The next node in the list.
+ * Return: The address of the new node, or NULL if it failed.
+ */
+dlistint_t *create_new_node(int n, dlistint_t *prev, dlistint_t *next)
+{
+	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+		return NULL;
+	new_node->n = n;
+	new_node->prev = prev;
+	new_node->next = next;
+	return new_node;
+}
+
+/**
+ * insert_dnodeint_at_index - Inserts a new
+ * node at a given position.
+ * @h: A double pointer to the head
+ * of the dlistint_t list.
+ * @idx: The index at which the new
+ * node should be added.
+ * @n: The value to be stored in the new node.
+ * Return: The address of the new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *current = *h;
+	dlistint_t *current = *h;
 	unsigned int i = 0;
 
 	if (h == NULL)
-		return NULL;
-
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
-		return NULL;
-
-	new_node->n = n;
+		return (NULL);
 
 	if (idx == 0)
 	{
-		new_node->prev = NULL;
-		new_node->next = current;
+		dlistint_t *new_node = create_new_node(n, NULL, current);
+		if (new_node == NULL)
+			return (NULL);
 		if (current != NULL)
 			current->prev = new_node;
 		*h = new_node;
-		return new_node;
+		return (new_node);
 	}
 
 	while (i < idx - 1)
 	{
 		if (current == NULL)
-		{
-			free(new_node);
-			return NULL;
-		}
+			return (NULL);
 		current = current->next;
 		i++;
 	}
 
 	if (current == NULL)
-	{
-		free(new_node);
-		return NULL;
-	}
+		return (NULL);
 
-	new_node->prev = current;
-	new_node->next = current->next;
+	dlistint_t *new_node = create_new_node(n, current, current->next);
+	if (new_node == NULL)
+		return (NULL);
 
 	if (current->next != NULL)
 		current->next->prev = new_node;

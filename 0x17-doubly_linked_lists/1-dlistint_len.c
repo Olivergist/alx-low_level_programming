@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * dlistint_len - Returns the number of elements in 
+ * dlistint_len - Returns the number of elements in
  * a dlistint_t list.
  * @h: A pointer to the head of the dlistint_t list.
  * Return: The number of elements in the list as size_t.
