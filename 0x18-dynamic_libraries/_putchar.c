@@ -1,5 +1,5 @@
-#include "main.h"
 #include <unistd.h>
+
 /**
  * _putchar - stdout brings out everything  it receives
  * @c: Print Character
